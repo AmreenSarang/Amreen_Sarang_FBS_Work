@@ -1,0 +1,8 @@
+n = int(input('Enter Number: '))
+sum = 0
+
+for i in range(1, n + 1):
+    expo = n ** i
+    sum += expo
+    
+print('Sum:', sum)

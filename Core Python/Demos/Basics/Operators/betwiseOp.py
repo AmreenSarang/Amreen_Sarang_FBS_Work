@@ -1,0 +1,5 @@
+print(10 & 12)
+print(14 | 36)
+print(16 ^ 21)
+print(10 << 2)
+print(15 >> 2)
