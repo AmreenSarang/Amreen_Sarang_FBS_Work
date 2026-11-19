@@ -1,0 +1,61 @@
+from abc import ABC, abstractmethod
+class Vehicle(ABC):
+    def __init__(self, persons):
+        self.persons = persons
+
+    @abstractmethod
+    def calToll(self):
+        pass
+
+    def __str__(self):
+        return f"Persons = {self.persons}"
+
+class TwoWheeler(Vehicle):
+    def calToll(self):
+        toll = 20
+        if self.persons > 2:
+            toll += (self.persons - 2) * 10
+        return toll
+
+    def __str__(self):
+        return super().__str__() + f" Total Toll = {self.calToll()}"
+
+class ThreeWheeler(Vehicle):
+    def calToll(self):
+        toll = 30
+        if self.persons > 3:
+            toll += (self.persons - 3) * 20
+        return toll
+
+    def __str__(self):
+        return super().__str__() + f" Total Toll = {self.calToll()}"
+
+class FourWheeler(Vehicle):
+    def calToll(self):
+        toll = 40
+        if self.persons > 4:
+            toll += (self.persons - 4) * 40
+        return toll
+
+    def __str__(self):
+        return super().__str__() + f" Total Toll = {self.calToll()}"
+
+class HeavyVehicle(Vehicle):
+    def calToll(self):
+        toll = 60
+        if self.persons > 6:
+            toll += (self.persons - 6) * 100
+        return toll
+
+    def __str__(self):
+        return super().__str__() + f" Total Toll = {self.calToll()}"
+
+t = TwoWheeler(3)
+th = ThreeWheeler(4)
+f = FourWheeler(5)
+h = HeavyVehicle(8)
+
+print(t)
+print(th)
+print(f)
+print(h)
